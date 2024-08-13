@@ -7,3 +7,5 @@
  * // TODO
  * ````
  */
+
+export * from "./src/components/badge/Badge"
