@@ -1,0 +1,28 @@
+.trc-badge {
+    --trc-badge-bg-color: transparent;
+    --trc-badge-label-color: currentColor;
+    --trc-badge-label-font-size: 0.875rem;
+    --trc-badge-border-radius: 0.675rem;
+    display: inline-block;
+    color: var(--trc-badge-label-color);
+    font-size: var(--trc-badge-label-font-size);
+}
+
+/* variant: capsule */
+.trc-badge.trc-capsule {
+    padding: 0.25rem 1rem;
+    border-radius: var(--trc-badge-border-radius);
+    text-align: center;
+    background-color: var(--trc-badge-bg-color);
+}
+
+/* variant: dot */
+.trc-badge.trc-dot:before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 4px;
+    background-color: var(--trc-badge-bg-color);
+}

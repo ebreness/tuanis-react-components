@@ -8,4 +8,4 @@
  * ````
  */
 
-export * from "./src/components/badge/Badge"
+export * from './src/components/badge/Badge';
