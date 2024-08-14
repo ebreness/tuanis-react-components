@@ -4,7 +4,8 @@
     "paths": {
       "*": ["src/*"]
     },
-    "jsx": "react"
+    "target": "ESNext",
+    "jsx": "react-jsx"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
