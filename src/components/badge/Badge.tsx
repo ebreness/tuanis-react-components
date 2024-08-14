@@ -5,7 +5,7 @@ interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'capsule' | 'dot';
   color: string;
   borderRadius?: string;
-  children: React.ReactElement;
+  children: React.ReactNode;
 }
 
 /**
