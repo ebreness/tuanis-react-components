@@ -1,0 +1,8 @@
+.trc-container-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    /*overflow: auto;*/
+    /* todo: check if needed */
+}

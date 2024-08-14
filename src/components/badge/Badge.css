@@ -5,7 +5,7 @@
 }
 
 /* variant: capsule */
-.trc-badge.trc-capsule {
+.trc-badge.variant-capsule {
     padding: 0.25rem 1.5rem;
     border-radius: var(--trc-badge-border-radius);
     text-align: center;
@@ -13,7 +13,7 @@
 }
 
 /* variant: dot */
-.trc-badge.trc-dot:before {
+.trc-badge.variant-dot:before {
     content: '';
     display: inline-block;
     width: 10px;

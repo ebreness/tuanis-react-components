@@ -35,7 +35,7 @@ export const Badge = ({
   } as React.CSSProperties;
 
   return (
-    <div className={`trc-badge trc-${variant}`} style={cssVariables} {...rest}>
+    <div className={`trc-badge variant-${variant}`} style={cssVariables} {...rest}>
       {children}
     </div>
   );
