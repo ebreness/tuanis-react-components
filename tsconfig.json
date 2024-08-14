@@ -11,6 +11,6 @@
     "moduleResolution": "Bundler",
     "jsx": "react-jsx"
   },
-  "include": ["src/**/*"],
+  "include": ["index.ts","src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
