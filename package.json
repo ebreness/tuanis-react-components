@@ -1,7 +1,16 @@
 {
   "name": "@tuanis/react-components",
+  "version": "0.1.1",
   "author": "Erick Brenes Solano",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebreness/tuanis-react-components.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "GPL-3.0-or-later",
+  "main": "mod.ts",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
