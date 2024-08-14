@@ -2,7 +2,7 @@
   "name": "@tuanis/react-components",
   "version": "0.1.6",
   "description": "",
-  "main": "./dist/mod.js",
+  "main": "index.js",
   "scripts": {
     "build": "tsc",
     "prepublish": "npm run build"
