@@ -1,12 +1,11 @@
 import * as React from 'react';
-import type { CSSProperties, HTMLAttributes, ReactElement } from 'react';
 import './Badge.css';
 
-interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
+interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'capsule' | 'dot';
   color: string;
   borderRadius?: string;
-  children: ReactElement;
+  children: React.ReactElement;
 }
 
 /**
@@ -29,11 +28,11 @@ export const Badge = ({
   children,
   borderRadius,
   ...rest
-}: BadgeProps): ReactElement => {
-  const cssVariables: CSSProperties = {
+}: BadgeProps): React.ReactElement => {
+  const cssVariables = {
     '--trc-badge-color': color,
-    '--trc-badge-border-radius': borderRadius,
-  } as CSSProperties;
+    '--trc-badge-border-radius': borderRadius
+  } as React.CSSProperties;
 
   return (
     <div className={`trc-badge trc-${variant}`} style={cssVariables} {...rest}>
