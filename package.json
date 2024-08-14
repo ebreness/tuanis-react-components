@@ -11,13 +11,24 @@
   },
   "license": "GPL-3.0-or-later",
   "main": "mod.ts",
-  "dependencies": {
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\""
+  },
+  "peerDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "typescript": "^5.5.3"
+    "eslint": "^9.9.0",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-jsdoc": "^1.3.0",
+    "typescript-eslint": "^8.1.0"
   }
 }

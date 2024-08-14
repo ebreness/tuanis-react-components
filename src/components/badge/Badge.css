@@ -1,24 +1,24 @@
 .trc-badge {
-    --trc-badge-color: 'black';
-    --trc-badge-border-radius: 1rem;
-    display: inline-block;
+  --trc-badge-color: 'black';
+  --trc-badge-border-radius: 1rem;
+  display: inline-block;
 }
 
 /* variant: capsule */
 .trc-badge.trc-capsule {
-    padding: 0.25rem 1.5rem;
-    border-radius: var(--trc-badge-border-radius);
-    text-align: center;
-    background-color: var(--trc-badge-color);
+  padding: 0.25rem 1.5rem;
+  border-radius: var(--trc-badge-border-radius);
+  text-align: center;
+  background-color: var(--trc-badge-color);
 }
 
 /* variant: dot */
 .trc-badge.trc-dot:before {
-    content: '';
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-right: 4px;
-    background-color: var(--trc-badge-color);
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 4px;
+  background-color: var(--trc-badge-color);
 }
