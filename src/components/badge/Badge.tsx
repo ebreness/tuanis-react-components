@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './Badge.css';
 
-interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'capsule' | 'dot';
   color: string;
   borderRadius?: string;
