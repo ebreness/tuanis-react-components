@@ -29,7 +29,7 @@ export interface FormProps {
   };
   initialData: Data;
   onSubmit: (data: Data) => void;
-  validateOnMount: boolean;
+  validateOnMount?: boolean;
   children: React.ReactNode;
 }
 

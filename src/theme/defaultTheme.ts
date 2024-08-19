@@ -41,7 +41,7 @@ export const defaultTheme: ThemeContext = {
   },
   container: {
     // Do not set min-width otherwise @media queries won't be applied
-    padding: 'var(--trc-spacing-lg)',
+    padding: 'var(--trc-spacing-xl)',
     backgroundColor: 'var(--trc-background-primary)',
     border: 'var(--trc-border-width) solid var(--trc-border-color)',
     rounded: {

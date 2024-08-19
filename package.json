@@ -3,7 +3,7 @@
   "version": "0.3.1",
   "description": "",
   "author": "ebreness",
-  "main": "src/index.ts",
+  "main": "index.ts",
   "types": "dist/index.d.ts",
   "license": "GPL-3.0-or-later",
   "homepage": "https://github.com/ebreness/tuanis-react-components#readme",
