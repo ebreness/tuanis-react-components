@@ -7,7 +7,7 @@ export interface FormFieldControlProps {
 }
 
 export const FormFieldControl = ({ children }: FormFieldControlProps) => {
-  const { onFieldValueChange } = useFormContext();
+  const { handleFieldValueChange } = useFormContext();
   const { fieldName, fieldData } = useFormFieldContext();
   const control = React.Children.only(children) as React.ReactElement; // only 1 control allowed
 
@@ -24,7 +24,7 @@ export const FormFieldControl = ({ children }: FormFieldControlProps) => {
         value = String(e.target.checked);
       }
 
-      onFieldValueChange(fieldName, value);
+      handleFieldValueChange(fieldName, value);
     }
   });
 };

@@ -6,7 +6,7 @@ export interface FormContextData {
     fields: Field[];
   };
   formData: FormData;
-  onFieldValueChange?: (name: string, value: string) => void;
+  handleFieldValueChange?: (name: string, value: string) => void;
   handleSubmit?: () => void;
   isFormValid?: () => boolean;
 }

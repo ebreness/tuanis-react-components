@@ -29,6 +29,7 @@ export interface FormProps {
   };
   initialData: Data;
   onSubmit: (data: Data) => void;
+  onFieldValueChange?: (name: string, value: FieldValue) => void;
   validateOnMount?: boolean;
   children: React.ReactNode;
 }
@@ -40,6 +41,7 @@ export const Form = ({
   schema,
   initialData,
   onSubmit,
+  onFieldValueChange,
   validateOnMount = false,
   children
 }: FormProps) => {
@@ -74,12 +76,13 @@ export const Form = ({
 
   const [formData, setFormData] = React.useState<FormData>(defaultData);
 
-  const onFieldValueChange = (name: string, value: string) => {
+  const handleFieldValueChange = (name: string, value: string) => {
     const errorMsg = getFieldErrorMessage(
       schema.fields.find((f) => f.name === name),
       name,
       value
     );
+
     setFormData({
       ...formData,
       [name]: {
@@ -88,6 +91,10 @@ export const Form = ({
         error: errorMsg
       }
     });
+
+    if (onFieldValueChange) {
+      onFieldValueChange(name, value);
+    }
   };
 
   const handleSubmit = () => {
@@ -109,7 +116,7 @@ export const Form = ({
 
   return (
     <FormContext.Provider
-      value={{ schema, formData, onFieldValueChange, handleSubmit, isFormValid }}
+      value={{ schema, formData, handleFieldValueChange, handleSubmit, isFormValid }}
     >
       <form className='trc-form'>{children}</form>
     </FormContext.Provider>
