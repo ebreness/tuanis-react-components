@@ -1,10 +1,10 @@
 import * as React from 'react';
 import './Badge.css';
+import { useTheme } from '../../theme/ThemeContext';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'capsule' | 'dot';
   color: string;
-  borderRadius?: string;
   children: React.ReactNode;
 }
 
@@ -26,16 +26,29 @@ export const Badge = ({
   variant = 'capsule',
   color,
   children,
-  borderRadius,
   ...rest
 }: BadgeProps): React.ReactElement => {
+  const theme = useTheme();
+
   const cssVariables = {
-    '--trc-badge-color': color,
-    '--trc-badge-border-radius': borderRadius
+    '--trc-badge-color': color
   } as React.CSSProperties;
 
+  if (variant === 'dot') {
+    return (
+      <div className='trc-badge variant-dot' style={{ ...theme.badge, ...cssVariables }} {...rest}>
+        <div className='dot' style={{ ...theme.badge['dot'], ...cssVariables }}></div>
+        {children}
+      </div>
+    );
+  }
+
   return (
-    <div className={`trc-badge variant-${variant}`} style={cssVariables} {...rest}>
+    <div
+      className={`trc-badge variant-${variant}`}
+      style={{ ...theme.badge, ...theme.badge[variant], ...cssVariables }}
+      {...rest}
+    >
       {children}
     </div>
   );

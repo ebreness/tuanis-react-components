@@ -1,25 +1,13 @@
 .trc-container {
-    --trc-container-bg-color: 'white';
-    --trc-container-top-offset: 4rem;
-    min-width: 480px;
-    padding: 2rem;
-    background-color: var(--trc-container-bg-color);
-    border: 1px solid #e2e8f0;
+    min-width: var(--trc-container-min-width); /* variable defined in the theme */
 }
 
 .trc-container.variant-rounded {
-    border-radius: 1rem;
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    border-radius: var(--trc-border-radius); /* variable defined in the theme */
+    overflow: hidden;
 }
 
-.trc-container.variant-full-height {
-    background-color: var(--trc-container-bg-color);
-    min-height: calc(100vh - var(--trc-container-top-offset) - 1px); /* -1px to avoid scrollbars */
-    border: none;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
+/*todo: remove hardcoded 480px value */
 @media (max-width: 480px) {
     .trc-container.variant-rounded {
         border-radius: 0;

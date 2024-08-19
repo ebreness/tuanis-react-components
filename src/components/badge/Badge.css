@@ -1,24 +1,22 @@
 .trc-badge {
-    --trc-badge-color: 'black';
-    --trc-badge-border-radius: 1rem;
+    --trc-badge-color: transparent;
     display: inline-block;
+    /* add more styles from theme -> badge */
+    /* add more styles from theme -> badge -> capsule */
 }
 
-/* variant: capsule */
-.trc-badge.variant-capsule {
-    padding: 0.25rem 1.5rem;
-    border-radius: var(--trc-badge-border-radius);
-    text-align: center;
+.trc-badge > .dot {
     background-color: var(--trc-badge-color);
+    /* add more styles from theme -> badge -> dot */
+
 }
 
-/* variant: dot */
-.trc-badge.variant-dot:before {
-    content: '';
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-right: 4px;
+.trc-badge.variant-dot {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.trc-badge.variant-capsule {
     background-color: var(--trc-badge-color);
 }
