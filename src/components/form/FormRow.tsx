@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useTheme } from '../../theme/ThemeContext';
+import './FormRow.css';
 
 export interface FormRowProps {
   children: React.ReactNode;
@@ -7,8 +8,14 @@ export interface FormRowProps {
 
 export const FormRow = ({ children }: FormRowProps) => {
   const theme = useTheme();
+
+  const columns = React.Children.count(children);
+  const cssVariables = {
+    '--trc-form-row-columns': columns
+  } as React.CSSProperties;
+
   return (
-    <div className='trc-form-row' style={{ ...theme.form['row'] }}>
+    <div className='trc-form-row' style={{ ...theme.form['row'], ...cssVariables }}>
       {children}
     </div>
   );

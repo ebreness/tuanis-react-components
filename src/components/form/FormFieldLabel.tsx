@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useFormFieldContext } from './formContext';
+import { useFormContext, useFormFieldContext } from './formContext';
 import { useTheme } from '../../theme/ThemeContext';
 
 export interface FormFieldLabelProps {
@@ -8,7 +8,8 @@ export interface FormFieldLabelProps {
 
 export const FormFieldLabel = ({ children }: FormFieldLabelProps) => {
   const theme = useTheme();
-  const { fieldName: fieldName } = useFormFieldContext();
+  const { schema } = useFormContext();
+  const { fieldName } = useFormFieldContext();
 
   return (
     <label
@@ -17,6 +18,9 @@ export const FormFieldLabel = ({ children }: FormFieldLabelProps) => {
       htmlFor={fieldName}
     >
       {children}
+      {schema.fields.find((f) => f.name === fieldName).required && (
+        <span style={{ color: 'var(--trc-error-color)' }}>*</span>
+      )}
     </label>
   );
 };

@@ -1,0 +1,10 @@
+.trc-form-row {
+    --trc-form-row-columns: 1;
+    grid-template-columns: repeat(var(--trc-form-row-columns), 1fr);
+}
+
+@media (max-width: 767px) { /* 480px + sidebar width */
+    .trc-form-row {
+        grid-template-columns: 1fr; /* Switch to a single column */
+    }
+}

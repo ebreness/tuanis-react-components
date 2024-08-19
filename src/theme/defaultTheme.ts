@@ -8,6 +8,7 @@ export const defaultTheme: ThemeContext = {
     '--trc-background-secondary': '#cbd5e1',
     '--trc-text-color': '#0f172a',
     '--trc-text-color-inverse': '#fff',
+    '--trc-text-color-muted': '#64748b',
     '--trc-heading-color': '#020617',
     '--trc-link-color': '#6d28d9',
     '--trc-border-color': '#e2e8f0',
@@ -16,12 +17,13 @@ export const defaultTheme: ThemeContext = {
     '--trc-warning-color': '#d97706',
     '--trc-font-family': 'Arial, sans-serif',
     '--trc-font-size-base': '16px',
-    '--trc-font-size-xl': '24px',
-    '--trc-font-size-lg': '20px',
-    '--trc-font-size-sm': '14px',
-    '--trc-font-size-xs': '12px',
+    '--trc-font-size-2xl': '2.25rem',
+    '--trc-font-size-xl': '1.5rem',
+    '--trc-font-size-lg': '1.125rem',
+    '--trc-font-size-sm': '0.875rem',
+    '--trc-font-size-xs': '0.75rem',
     '--trc-font-weight-normal': '400',
-    '--trc-font-weight-bold': '700',
+    '--trc-font-weight-bold': '600',
     '--trc-spacing-xs': '0.25rem',
     '--trc-spacing-sm': '0.5rem',
     '--trc-spacing-md': '1rem',
@@ -55,34 +57,40 @@ export const defaultTheme: ThemeContext = {
   },
   form: {
     row: {
-      display: 'flex',
-      flexDirection: 'row',
+      display: 'grid',
       alignItems: 'center',
-      justifyContent: 'start',
-      flexWrap: 'wrap',
-      gap: 'var(--trc-spacing-md)'
+      justifyItems: 'start',
+      gap: 'var(--trc-spacing-lg)',
+      marginBottom: 'var(--trc-spacing-lg)'
     },
     field: {
-      height: 'var(--trc-input-height)',
-      flex: '1 1 auto',
+      width: '100%',
+      height: '6.5rem',
+      // flex: '1 1 auto',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center',
+      justifyContent: 'start',
       alignItems: 'start',
       gap: 'var(--trc-spacing-xs)',
       marginBottom: 'var(--trc-spacing-md)'
     },
     fieldLabel: {
-      minHeight: 'var(--trc-spacing-md)' /* use the space when the label is blank */,
-      fontSize: 'var(--trc-font-size-xs)',
+      // minHeight: '1.125rem' /* use the space when the label is blank */,
+      fontSize: 'var(--trc-font-size-sm)',
       lineHeight: '1.5',
       fontWeight: 'var(--trc-font-weight-bold)'
     },
     fieldMessage: {
+      // minHeight: '1rem' /* use the space when the label is blank */,
       color: 'var(--trc-error-color)',
       fontSize: 'var(--trc-font-size-xs)',
       fontStyle: 'italic',
       lineHeight: 'var(--trc-spacing-md)'
+    },
+    fieldTooltip: {
+      fontSize: 'var(--trc-font-size-xs)',
+      color: 'var(--trc-text-color-muted)',
+      fontStyle: 'italic'
     },
     actions: {
       marginTop: 'var(--trc-spacing-md)',

@@ -13,7 +13,7 @@ export const FormField = ({ name, children }: FormFieldProps) => {
 
   return (
     <FormFieldContext.Provider value={{ fieldName: name, fieldData: formData[name] }}>
-      <div className='trc-form-field' style={{ ...theme.form['actions'] }}>
+      <div className='trc-form-field' style={{ ...theme.form['field'] }}>
         {children}
       </div>
     </FormFieldContext.Provider>

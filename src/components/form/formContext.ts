@@ -1,16 +1,20 @@
 import { createContext, useContext } from 'react';
-import { FieldValue } from './Form';
+import { Field, FieldData, FormData } from './Form';
 
-interface FormContextData {
-  formData: { [key: string]: { value: string } };
+export interface FormContextData {
+  schema?: {
+    fields: Field[];
+  };
+  formData: FormData;
   onFieldValueChange?: (name: string, value: string) => void;
   handleSubmit?: () => void;
   isFormValid?: () => boolean;
 }
 
-interface FormFieldContextData {
+export interface FormFieldContextData {
   fieldName: string;
-  fieldData: { value: FieldValue; error?: string };
+  fieldData: FieldData;
+  fieldDefinition?: Field;
 }
 
 /*
@@ -33,7 +37,7 @@ export const useFormContext = () => {
 
 export const FormFieldContext = createContext<FormFieldContextData>({
   fieldName: '',
-  fieldData: { value: '', error: '' }
+  fieldData: { value: '', error: '', isValid: false }
 });
 
 export const useFormFieldContext = () => {

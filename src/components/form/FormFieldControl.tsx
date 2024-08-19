@@ -14,7 +14,6 @@ export const FormFieldControl = ({ children }: FormFieldControlProps) => {
   return React.cloneElement(control, {
     name: fieldName,
     value: fieldData.value,
-    className: 'trc-form-field-control',
     onChange: (
       e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => {

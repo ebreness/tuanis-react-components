@@ -20,7 +20,9 @@ export const FormActions = ({ children }: FormActionsProps) => {
           return React.cloneElement(submitBtn, {
             disabled: !isFormValid(),
             onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
-              e.preventDefault();
+              if (e) {
+                e.preventDefault();
+              }
               handleSubmit();
             }
           });
