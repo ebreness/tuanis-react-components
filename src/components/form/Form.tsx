@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FormContext } from './formContext';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { getFieldErrorMessage } from './validator';
 import { FormField } from './FormField';
 import { FormFieldLabel } from './FormFieldLabel';
@@ -31,6 +31,7 @@ export interface FormProps {
   onSubmit?: (data: Data) => void;
   onChange?: (data: Data) => void;
   validateOnMount?: boolean;
+  clearOnSubmit?: boolean;
   children: React.ReactNode;
 }
 
@@ -43,6 +44,7 @@ export const Form = ({
   onSubmit,
   onChange,
   validateOnMount = false,
+  clearOnSubmit = false,
   children
 }: FormProps) => {
   /**
@@ -65,7 +67,7 @@ export const Form = ({
           return [
             key,
             {
-              value,
+              value: String(value), // FieldValue accepts only string
               isValid: !errorMsg /* even if validateOnMount is false, calculate field validity */,
               error: validateOnMount ? errorMsg : ''
             }
@@ -81,6 +83,7 @@ export const Form = ({
       Object.entries(input).map(([fieldName, data]) => [fieldName, data.value])
     );
   };
+
   const handleFieldValueChange = (name: string, value: string) => {
     const errorMsg = getFieldErrorMessage(
       schema.fields.find((f) => f.name === name),
@@ -108,6 +111,10 @@ export const Form = ({
     if (onSubmit) {
       onSubmit(mapFormDataToData(formData));
     }
+
+    if (clearOnSubmit) {
+      setFormData(defaultData);
+    }
   };
 
   const isFormValid = () => {
@@ -117,6 +124,12 @@ export const Form = ({
       Object.values(formData).every((obj) => obj.isValid)
     );
   };
+
+  useEffect(() => {
+    if (onChange) {
+      onChange(initialData);
+    }
+  }, []);
 
   return (
     <FormContext.Provider

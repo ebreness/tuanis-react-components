@@ -46,7 +46,7 @@ export const defaultTheme: ThemeContext = {
     border: 'var(--trc-border-width) solid var(--trc-border-color)',
     rounded: {
       // Do not set border-radius otherwise @media queries won't be applied
-      boxShadow: 'var(--trc-box-shadow-sm)'
+      // boxShadow: 'var(--trc-box-shadow-sm)'
     },
     fullHeight: {
       minHeight: 'calc(100vh - var(--trc-spacing-xl) - 1px)', // -1px to avoid scrollbars
@@ -57,6 +57,7 @@ export const defaultTheme: ThemeContext = {
   },
   form: {
     row: {
+      width: '100%',
       display: 'grid',
       alignItems: 'center',
       justifyItems: 'start',
@@ -65,7 +66,7 @@ export const defaultTheme: ThemeContext = {
     },
     field: {
       width: '100%',
-      height: '6.5rem',
+      // height: '6.5rem',
       // flex: '1 1 auto',
       display: 'flex',
       flexDirection: 'column',

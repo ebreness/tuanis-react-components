@@ -10,10 +10,10 @@ export const FormFieldControl = ({ children }: FormFieldControlProps) => {
   const { handleFieldValueChange } = useFormContext();
   const { fieldName, fieldData } = useFormFieldContext();
   const control = React.Children.only(children) as React.ReactElement; // only 1 control allowed
-
   return React.cloneElement(control, {
     name: fieldName,
-    value: fieldData.value,
+    value:
+      control.type['displayName'] === 'Checkbox' ? fieldData.value === 'true' : fieldData.value,
     onChange: (
       e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => {
