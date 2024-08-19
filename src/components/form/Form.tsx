@@ -28,8 +28,8 @@ export interface FormProps {
     fields: Field[];
   };
   initialData: Data;
-  onSubmit: (data: Data) => void;
-  onFieldValueChange?: (name: string, value: FieldValue) => void;
+  onSubmit?: (data: Data) => void;
+  onChange?: (data: Data) => void;
   validateOnMount?: boolean;
   children: React.ReactNode;
 }
@@ -41,7 +41,7 @@ export const Form = ({
   schema,
   initialData,
   onSubmit,
-  onFieldValueChange,
+  onChange,
   validateOnMount = false,
   children
 }: FormProps) => {
@@ -76,6 +76,11 @@ export const Form = ({
 
   const [formData, setFormData] = React.useState<FormData>(defaultData);
 
+  const mapFormDataToData = (input: FormData): Data => {
+    return Object.fromEntries(
+      Object.entries(input).map(([fieldName, data]) => [fieldName, data.value])
+    );
+  };
   const handleFieldValueChange = (name: string, value: string) => {
     const errorMsg = getFieldErrorMessage(
       schema.fields.find((f) => f.name === name),
@@ -83,27 +88,26 @@ export const Form = ({
       value
     );
 
-    setFormData({
+    const updatedData: FormData = {
       ...formData,
       [name]: {
         value: value,
         isValid: !errorMsg,
         error: errorMsg
       }
-    });
+    };
+    setFormData(updatedData);
 
-    if (onFieldValueChange) {
-      onFieldValueChange(name, value);
+    if (onChange) {
+      onChange(mapFormDataToData(updatedData));
     }
   };
 
   const handleSubmit = () => {
     // remove all properties from formData except for value
-    onSubmit(
-      Object.fromEntries(
-        Object.entries(formData).map(([fieldName, data]) => [fieldName, data.value])
-      )
-    );
+    if (onSubmit) {
+      onSubmit(mapFormDataToData(formData));
+    }
   };
 
   const isFormValid = () => {

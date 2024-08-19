@@ -101,7 +101,6 @@ export const defaultTheme: ThemeContext = {
     }
   },
   badge: {
-    fontSize: 'var(--trc-font-size-xs)',
     capsule: {
       // Do not set backgroundColor because the Badge component receives a prop for this
       padding: 'var(--trc-spacing-xs) var(--trc-spacing-lg)',
