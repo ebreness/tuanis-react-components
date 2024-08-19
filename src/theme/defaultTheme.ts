@@ -5,7 +5,7 @@ export const defaultTheme: ThemeContext = {
     '--trc-trc-primary': '#1d4ed8',
     '--trc-secondary': '#eab308',
     '--trc-background-primary': 'white',
-    '--trc-background-secondary': '#cbd5e1',
+    '--trc-background-secondary': '#f1f5f9',
     '--trc-text-color': '#0f172a',
     '--trc-text-color-inverse': '#fff',
     '--trc-text-color-muted': '#64748b',
@@ -42,13 +42,14 @@ export const defaultTheme: ThemeContext = {
   container: {
     // Do not set min-width otherwise @media queries won't be applied
     padding: 'var(--trc-spacing-xl)',
-    backgroundColor: 'var(--trc-background-primary)',
-    border: 'var(--trc-border-width) solid var(--trc-border-color)',
     rounded: {
       // Do not set border-radius otherwise @media queries won't be applied
       // boxShadow: 'var(--trc-box-shadow-sm)'
+      backgroundColor: 'var(--trc-background-primary)',
+      border: 'var(--trc-border-width) solid var(--trc-border-color)'
     },
     fullHeight: {
+      backgroundColor: 'var(--trc-background-secondary)',
       minHeight: 'calc(100vh - var(--trc-spacing-xl) - 1px)', // -1px to avoid scrollbars
       border: 'none',
       maxWidth: 'var(--trc-container-max-width)',
