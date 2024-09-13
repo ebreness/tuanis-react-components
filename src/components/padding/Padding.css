@@ -1,0 +1,7 @@
+.trc-padding {
+
+}
+
+.trc-padding size-md {
+    padding: var(--trc-spacing-md);
+}

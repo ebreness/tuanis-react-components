@@ -6,11 +6,13 @@ import { useTheme } from '../../theme/ThemeContext';
 
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'rounded' | 'fullHeight';
+  minWidth?: string;
   children?: React.ReactNode;
 }
 
 export const Container = ({
   variant = 'rounded',
+  minWidth = 'auto',
   children,
   ...rest
 }: ContainerProps): React.ReactElement => {
@@ -20,10 +22,14 @@ export const Container = ({
     return null;
   }
 
+  const cssVariables = {
+    '--trc-container-min-width': minWidth
+  } as React.CSSProperties;
+
   return (
     <div
       className={`trc-container variant-${variant}`}
-      style={{ ...theme.container, ...theme.container[variant] }}
+      style={{ ...theme.container['common'], ...theme.container[variant], ...cssVariables }}
       {...rest}
     >
       {children}

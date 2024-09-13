@@ -1,6 +1,7 @@
 .trc-badge {
     --trc-badge-color: transparent;
     display: inline-block;
+    flex: 0 0 auto;
     /* add more styles from theme -> badge */
     /* add more styles from theme -> badge -> capsule */
 }
@@ -8,7 +9,6 @@
 .trc-badge > .dot {
     background-color: var(--trc-badge-color);
     /* add more styles from theme -> badge -> dot */
-
 }
 
 .trc-badge.variant-dot {

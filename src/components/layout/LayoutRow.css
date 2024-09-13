@@ -1,0 +1,12 @@
+.trc-layout-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+@media (max-width: 767px) {
+    .trc-layout-row {
+        flex-direction: column;
+    }
+}

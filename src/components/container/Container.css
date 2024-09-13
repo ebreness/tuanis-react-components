@@ -1,5 +1,6 @@
 .trc-container {
-    min-width: var(--trc-container-min-width); /* variable defined in the theme */
+    --trc-container-min-width: auto;
+    min-width: var(--trc-container-min-width);
 }
 
 .trc-container.variant-rounded {
@@ -7,13 +8,3 @@
     overflow: hidden;
 }
 
-/*todo: remove hardcoded 480px value */
-@media (max-width: 480px) {
-    .trc-container.variant-rounded {
-        border-radius: 0;
-    }
-
-    .trc-container {
-        min-width: auto;
-    }
-}

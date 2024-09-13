@@ -40,8 +40,7 @@ export const defaultTheme: ThemeContext = {
     '--trc-container-max-width': '1400px'
   },
   container: {
-    // Do not set min-width otherwise @media queries won't be applied
-    padding: 'var(--trc-spacing-xl)',
+    common: {},
     rounded: {
       // Do not set border-radius otherwise @media queries won't be applied
       // boxShadow: 'var(--trc-box-shadow-sm)'
@@ -103,6 +102,7 @@ export const defaultTheme: ThemeContext = {
     }
   },
   badge: {
+    common: {},
     capsule: {
       // Do not set backgroundColor because the Badge component receives a prop for this
       padding: 'var(--trc-spacing-xs) var(--trc-spacing-lg)',

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import './Badge.css';
 import { useTheme } from '../../theme/ThemeContext';
+import './Badge.css';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'capsule' | 'dot';
@@ -29,6 +29,10 @@ export const Badge = ({
   ...rest
 }: BadgeProps): React.ReactElement => {
   const theme = useTheme();
+
+  if (!theme || JSON.stringify(theme) === '{}') {
+    return null;
+  }
 
   const cssVariables = {
     '--trc-badge-color': color
