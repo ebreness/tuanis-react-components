@@ -57,13 +57,20 @@ export const ThemeProvider = ({ theme, children }: ThemeProps) => {
     }
   }, []);
 
-  // Apply CSS variables to :root
+  // Apply CSS variables to :root and body
   useEffect(() => {
     const root = document.documentElement;
+    const body = document.body;
 
     if (mergedTheme.root) {
       for (const [key, value] of Object.entries(mergedTheme.root)) {
         root.style.setProperty(key, value);
+      }
+    }
+
+    if (mergedTheme.body) {
+      for (const [key, value] of Object.entries(mergedTheme.body)) {
+        body.style.setProperty(key, value);
       }
     }
   }, [mergedTheme]);

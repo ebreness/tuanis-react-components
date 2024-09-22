@@ -39,6 +39,9 @@ export const defaultTheme: ThemeContext = {
     '--trc-container-min-width': '480px',
     '--trc-container-max-width': '1400px'
   },
+  body: {
+    margin: 0
+  },
   container: {
     common: {},
     rounded: {

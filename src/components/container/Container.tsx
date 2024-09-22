@@ -7,12 +7,14 @@ import { useTheme } from '../../theme/ThemeContext';
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'rounded' | 'fullHeight';
   minWidth?: string;
+  padding?: string;
   children?: React.ReactNode;
 }
 
 export const Container = ({
   variant = 'rounded',
   minWidth = 'auto',
+  padding = 'var(--trc-spacing-md)',
   children,
   ...rest
 }: ContainerProps): React.ReactElement => {
@@ -23,7 +25,8 @@ export const Container = ({
   }
 
   const cssVariables = {
-    '--trc-container-min-width': minWidth
+    '--trc-container-min-width': minWidth,
+    '--trc-container-padding': padding
   } as React.CSSProperties;
 
   return (

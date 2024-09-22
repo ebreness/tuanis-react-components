@@ -4,15 +4,11 @@ import { LayoutRow } from './LayoutRow';
 import './Layout.css';
 
 export interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant: 'centered';
+  variant: 'sidebar';
   children?: React.ReactNode;
 }
 
-export const Layout = ({
-  variant = 'centered',
-  children,
-  ...rest
-}: LayoutProps): React.ReactElement => {
+export const Layout = ({ variant, children, ...rest }: LayoutProps): React.ReactElement => {
   const theme = useTheme();
 
   if (!theme || JSON.stringify(theme) === '{}') {

@@ -9,6 +9,11 @@ export interface FormFieldProps {
 
 export const FormField = ({ name, children }: FormFieldProps) => {
   const theme = useTheme();
+
+  if (!theme) {
+    return null;
+  }
+
   const { formData } = useFormContext();
 
   return (

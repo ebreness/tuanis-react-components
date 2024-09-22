@@ -1,15 +1,22 @@
-.trc-layout {
+/*.trc-layout {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 1rem;*/
+/*    height: 100dvh;*/
+/*    background-color: #e2e8f0;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.trc-layout.variant-centered {*/
+/*    margin: 0 auto;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+
+/*}*/
+
+.trc-layout.variant-sidebar {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    height: 100dvh;
-    background-color: #e2e8f0;
-    overflow: hidden;
+    flex-direction: row;
+    gap: var(--trc-spacing-md);
 }
 
-.trc-layout.variant-centered {
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
-
-}

@@ -1,6 +1,8 @@
 .trc-container {
     --trc-container-min-width: auto;
+    --trc-container-padding: auto;
     min-width: var(--trc-container-min-width);
+    padding: var(--trc-container-padding);
 }
 
 .trc-container.variant-rounded {
