@@ -41,15 +41,15 @@ export const getFieldErrorMessage = (definition: Field, name: string, value: Fie
     return '';
   }
 
-  if (isNaN(Number(value))) {
-    if (definition.pattern && !value.match(new RegExp(definition.pattern))) {
-      return 'El valor no tiene un formato válido.';
-    }
-  } else {
-    if (!definition.pattern.test(value)) {
-      return 'El número no tiene un formato válido.';
-    }
+  // if (isNaN(Number(value))) {
+  if (definition.pattern && !value.match(new RegExp(definition.pattern))) {
+    return 'El valor no tiene un formato válido.';
   }
+  // } else {
+  //   if (!definition.pattern.test(value)) {
+  //     return 'El número no tiene un formato válido.';
+  //   }
+  // }
 
   // If all checks pass, return "" indicating valid value
   return '';
