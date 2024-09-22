@@ -7,8 +7,13 @@ export interface FormFieldTooltipProps {
 
 export const FormFieldTooltip = ({ children }: FormFieldTooltipProps) => {
   const theme = useTheme();
+
+  if (!theme) return null;
   return (
-    <span className='trc-form-field-tooltip' style={{ ...theme.form['fieldTooltip'] }}>
+    <span
+      className='trc-form-field-tooltip'
+      style={theme.form ? { ...theme.form['fieldTooltip'] } : {}}
+    >
       {children}
     </span>
   );

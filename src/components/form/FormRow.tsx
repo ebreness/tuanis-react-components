@@ -14,8 +14,12 @@ export const FormRow = ({ children }: FormRowProps) => {
     '--trc-form-row-columns': columns
   } as React.CSSProperties;
 
+  if (!theme) return null;
   return (
-    <div className='trc-form-row' style={{ ...theme.form['row'], ...cssVariables }}>
+    <div
+      className='trc-form-row'
+      style={theme.form ? { ...theme.form['row'], ...cssVariables } : {}}
+    >
       {children}
     </div>
   );
