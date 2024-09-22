@@ -9,8 +9,9 @@ export const FormActions = ({ children }: FormActionsProps) => {
   const theme = useTheme();
   const { handleSubmit, isFormValid } = useFormContext();
 
+  if (!theme) return null;
   return (
-    <div className='trc-form-actions' style={{ ...theme.form['actions'] }}>
+    <div className='trc-form-actions' style={theme.form ? { ...theme.form['actions'] } : {}}>
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child) && child.props.type === 'submit') {
           const submitBtn = child as React.ReactElement<
